@@ -1,25 +1,34 @@
-# Create React App example
+# DiscordToolbox
 
-## How to use
+DiscordToolbox is a versatile frontend for Discord utilities.
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+## Getting it up and running
 
-```sh
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/create-react-app
-cd create-react-app
-```
+Use either [npm](https://github.com/npm/cli) or [yarn](https://github.com/yarnpkg/yarn). I recommend using yarn for speed.
 
-Install it and run:
-
-```sh
+npm:
+```bash
 npm install
 npm start
 ```
 
-or:
+yarn:
+```bash
+yarn install
+yarn start
+```
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui-org/material-ui/tree/master/examples/create-react-app)
+## Contributing
+I'm going to be honest. Since this is my first time using React, the code is going to be messy. Pull requests are greatly appreciated.
 
-## The idea behind the example
+For feature requests, please open an issue (I may be slow to respond), and I will review it and add it if I find it useful.
 
-This example demonstrates how you can use [Create React App](https://github.com/facebookincubator/create-react-app).
+## Credits
+DiscordToolbox was built using:
+
+* [react](https://github.com/facebook/react)
+    * [create-react-app](https://github.com/facebook/create-react-app)
+* [material-ui](https://github.com/mui-org/material-ui/)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
