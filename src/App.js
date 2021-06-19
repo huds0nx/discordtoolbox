@@ -9,6 +9,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import SearchIcon from '@material-ui/icons/Search';
 import { useStyles } from './components/styles'
 import { useTheme } from '@material-ui/core/styles'
+import Deleter from './components/webhook/deleter'
 
 function App() {
   const classes = useStyles();
@@ -101,6 +102,7 @@ function App() {
         <div className={classes.drawerHeader} />
       </main>
       <div className="classes.webhook">
+        <Deleter />
       </div>
     </div>
   );
