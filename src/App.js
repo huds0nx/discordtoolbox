@@ -6,6 +6,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Delete, Edit, Send, Comment, Search, Menu } from '@material-ui/icons';
 import { fade, useTheme, makeStyles } from '@material-ui/core/styles'
 import Deleter from './components/webhook/deleter'
+import Editer from './components/webhook/editer'
+import Sender from './components/webhook/sender'
+import Spammer from './components/webhook/spammer'
 
 const drawerWidth = 240;
 
@@ -122,13 +125,7 @@ export const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
-  // webhook deleter
-  deleter: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: theme.spacing(1, 1, 1, 0),
-  },
+  
   header: {
     position: 'absolute',
     textAlign: 'center',
@@ -250,6 +247,27 @@ function App() {
         </header>
         <div className={classes.deleter}>
           <Deleter />
+        </div>
+        <Divider />
+        <header className={classes.header}>
+            Webhook Sender
+        </header>
+        <div className={classes.sender}>
+          <Sender />
+        </div>
+        <Divider />
+        <header className={classes.header}>
+            Webhook Editer
+        </header>
+        <div className={classes.editer}>
+          <Editer />
+        </div>
+        <Divider />
+        <header className={classes.header}>
+            Webhook Spammer
+        </header>
+        <div className={classes.spammer}>
+          <Spammer />
         </div>
         <Divider />
       </main>

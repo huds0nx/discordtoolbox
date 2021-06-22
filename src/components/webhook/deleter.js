@@ -3,45 +3,38 @@ import { TextField, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  textField: {
+    paddingRight: 20,
+    width: '50%',
+  },
+  deleter: {
     display: 'flex',
     alignItems: 'center',
-  },
-  textField: {
-    flex: 1,
-    paddingRight: 20,
-    width: 500,
-  },
-  iconButton: {
-    padding: 10,
-  },
-  divider: {
-    height: 28,
-    margin: 4,
+    justifyContent: 'center',
+    padding: theme.spacing(3, null, 6, null),
   },
 }));
 
 export default function Deleter() {
   function deleteWebhook() {
     const request = new XMLHttpRequest();
-    request.open("DELETE", textRef.current.value);
+    request.open("DELETE", deleteTextRef.current.value);
     request.setRequestHeader('Content-type', 'application/json');
     request.send();
   }
 
   const classes = useStyles();
-  const textRef = useRef();
-
-
+  const deleteTextRef = useRef();
 
   return (
     <div className={classes.deleter}>
       <TextField 
         className={classes.textField} 
-        inputRef={textRef}
+        inputRef={deleteTextRef}
         placeholder="Webhook URL"
+        color="secondary"
       />
-      <Button onClick={deleteWebhook} variant="contained" color="primary">
+      <Button onClick={deleteWebhook} variant="contained" color="secondary">
         Delete
       </Button>
     </div>
