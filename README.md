@@ -19,7 +19,7 @@ yarn start
 ```
 
 ## Contributing
-I'm going to be honest. Since this is my first time using React, the code is going to be messy. Pull requests are greatly appreciated.
+I'm going to be honest. Since this is my first time using React, the code is going to be terrible, and many snippets are from the Material UI documentation. Pull requests are greatly appreciated.
 
 For feature requests, please open an issue (I may be slow to respond), and I will review it and add it if I find it useful.
 
