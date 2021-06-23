@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: theme.spacing(6, null, 6, null),
+    padding: theme.spacing(3, null, 6, null),
   },
   checkbox: {
     display: 'flex',
@@ -24,6 +24,63 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function sendWebhook() {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+      setOpen(false);
+    };
+
+    function checkCheckbox() {
+      //const username = 
+      //const avatar = 
+      //const webhookURL = 
+
+      if (webhookUrl.substr(0,4) == 'http' && webhookUrl.length !== 0) {
+          if (destroy) {
+              for (i = 0;i < slider.noUiSlider.get(); i++){
+                  if (embed){
+                      sendEmbedMessage()
+                  }else{
+                      sendMessage()
+                  }
+              }
+              deleteWebhook()
+              M.toast({html: 'Message/s sent', classes: 'rounded green'});
+              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success">
+                  Webhook successfully sent.
+                </Alert>
+              </Snackbar>
+              M.toast({html: 'Webhook deleted', classes: 'rounded orange'});
+
+          } else {
+              for (i = 0;i < slider.noUiSlider.get(); i++){
+                  if (embed){
+                      sendEmbedMessage()
+                  }else{
+                      sendMessage()
+                  }
+              }
+              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity="success">
+                  Webhook successfully sent.
+                </Alert>
+              </Snackbar>
+              M.toast({html: 'Message/s sent', classes: 'rounded green'});
+          }
+      } else {
+          M.toast({html: 'Invalid webhook', classes: 'rounded red'});
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="error">
+              The webhook you entered does not exist!
+            </Alert>
+          </Snackbar>
+      }
+    }
+
     // Embed Webhook
     function sendEmbedWebhook () {
     var request = new XMLHttpRequest();
@@ -66,7 +123,7 @@ export default function sendWebhook() {
     }
 
     // Normal Webhook
-    function sendWebhook() {
+    function sendNormalWebhook() {
       if (accumulator == 0) {
           var timer1 = setInterval(() => {
               if (sendingPossible) {
@@ -113,55 +170,6 @@ export default function sendWebhook() {
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
     };
-
-    function checkCheckbox() {
-      getData()
-      if (webhookUrl.substr(0,4) == 'http' && webhookUrl.length !== 0) {
-          if (destroy) {
-              for (i = 0;i < slider.noUiSlider.get(); i++){
-                  if (embed){
-                      sendEmbedMessage()
-                  }else{
-                      sendMessage()
-                  }
-              }
-              deleteWebhook()
-              M.toast({html: 'Message/s sent', classes: 'rounded green'});
-              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="success">
-                  Webhook successfully sent.
-                </Alert>
-              </Snackbar>
-              M.toast({html: 'Webhook deleted', classes: 'rounded orange'});
-              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="success">
-                  Webhook successfully deleted.
-                </Alert>
-              </Snackbar>
-          } else {
-              for (i = 0;i < slider.noUiSlider.get(); i++){
-                  if (embed){
-                      sendEmbedMessage()
-                  }else{
-                      sendMessage()
-                  }
-              }
-              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="success">
-                  Webhook successfully sent.
-                </Alert>
-              </Snackbar>
-              M.toast({html: 'Message/s sent', classes: 'rounded green'});
-          }
-      } else {
-          M.toast({html: 'Invalid webhook', classes: 'rounded red'});
-          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-            <Alert onClose={handleClose} severity="error">
-              The webhook you entered does not exist!
-            </Alert>
-          </Snackbar>
-      }
-    }
 
     return (
     <div className={classes.sender}>

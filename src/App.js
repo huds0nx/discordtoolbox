@@ -6,9 +6,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Delete, Edit, Send, Comment, Search, Menu } from '@material-ui/icons';
 import { fade, useTheme, makeStyles } from '@material-ui/core/styles'
 import Deleter from './components/webhook/deleter'
-import Editer from './components/webhook/editer'
+//import Editer from './components/webhook/editer'
 import Sender from './components/webhook/sender'
-import Spammer from './components/webhook/spammer'
+//import Spammer from './components/webhook/spammer'
 
 const drawerWidth = 240;
 
@@ -243,13 +243,6 @@ function App() {
       >
         <div className={classes.drawerHeader} />
         <header className={classes.header}>
-            Webhook Deleter
-        </header>
-        <div className={classes.deleter}>
-          <Deleter />
-        </div>
-        <Divider />
-        <header className={classes.header}>
             Webhook Sender
         </header>
         <div className={classes.sender}>
@@ -257,17 +250,24 @@ function App() {
         </div>
         <Divider />
         <header className={classes.header}>
+            Webhook Deleter
+        </header>
+        <div className={classes.deleter}>
+          <Deleter />
+        </div>
+        <Divider />
+        <header className={classes.header}>
             Webhook Editer
         </header>
         <div className={classes.editer}>
-          <Editer />
+          {/*<Editer />*/}
         </div>
         <Divider />
         <header className={classes.header}>
             Webhook Spammer
         </header>
         <div className={classes.spammer}>
-          <Spammer />
+          {/*<Spammer />*/}
         </div>
         <Divider />
       </main>
