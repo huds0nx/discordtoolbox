@@ -18,6 +18,11 @@ yarn install
 yarn start
 ```
 
+## Screenshots
+
+![preview](https://raw.githubusercontent.com/huds0nx/discordtoolbox/main/screenshots/main.png)
+![preview](https://raw.githubusercontent.com/huds0nx/discordtoolbox/main/screenshots/main%26menu.png)
+
 ## Contributing
 I'm going to be honest. Since this is my first time using React, the code is going to be terrible, and many snippets are from the Material UI documentation. Pull requests are greatly appreciated.
 
